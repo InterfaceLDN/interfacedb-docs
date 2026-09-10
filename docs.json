@@ -1,0 +1,303 @@
+{
+  "name": "InterfaceDB",
+  "theme": "mint",
+  "colors": {
+    "primary": "#111827",
+    "light": "#374151",
+    "dark": "#D1D5DB"
+  },
+  "navigation": {
+    "groups": [
+      {
+        "group": "Introduction",
+        "pages": [
+          "sdk",
+          "index",
+          "start-rn",
+          "start-vanilla",
+          "start-solidjs",
+          "start-svelte",
+          "start-vue",
+          "start-tanstack",
+          "start-python",
+          "create-instant-app",
+          "workflow",
+          "using-llms",
+          "common-mistakes"
+        ]
+      },
+      {
+        "group": "Working with data",
+        "pages": [
+          "init",
+          "modeling-data",
+          "instaml",
+          "instaql",
+          "infinite-queries",
+          "backend",
+          "patterns"
+        ]
+      },
+      {
+        "group": "Authentication and Permissions",
+        "pages": [
+          "auth",
+          "auth/magic-codes",
+          "auth/guest-auth",
+          "auth/google-oauth",
+          "auth/apple",
+          "auth/github-oauth",
+          "auth/linkedin-oauth",
+          "auth/clerk",
+          "auth/firebase",
+          "permissions",
+          "rate-limits"
+        ]
+      },
+      {
+        "group": "Instant features",
+        "pages": [
+          "users",
+          "presence-and-topics",
+          "cli",
+          "devtool",
+          "platform-api",
+          "explorer-component",
+          "emails",
+          "teams",
+          "storage",
+          "streams",
+          "webhooks",
+          "backups",
+          "stripe-payments",
+          "http-api",
+          "next-ssr",
+          "auth/platform-oauth"
+        ]
+      },
+      {
+        "group": "Self hosting",
+        "pages": [
+          "self-hosting",
+          "self-hosting/vps",
+          "self-hosting/aws",
+          "self-hosting/migrate"
+        ]
+      }
+    ]
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Dashboard",
+        "href": "https://interfacedb.com/dash"
+      }
+    ]
+  },
+  "redirects": [
+    {
+      "source": "/docs",
+      "destination": "/"
+    },
+    {
+      "source": "/docs/auth",
+      "destination": "/auth"
+    },
+    {
+      "source": "/docs/backend",
+      "destination": "/backend"
+    },
+    {
+      "source": "/docs/backups",
+      "destination": "/backups"
+    },
+    {
+      "source": "/docs/cli",
+      "destination": "/cli"
+    },
+    {
+      "source": "/docs/common-mistakes",
+      "destination": "/common-mistakes"
+    },
+    {
+      "source": "/docs/create-instant-app",
+      "destination": "/create-instant-app"
+    },
+    {
+      "source": "/docs/devtool",
+      "destination": "/devtool"
+    },
+    {
+      "source": "/docs/emails",
+      "destination": "/emails"
+    },
+    {
+      "source": "/docs/explorer-component",
+      "destination": "/explorer-component"
+    },
+    {
+      "source": "/docs/http-api",
+      "destination": "/http-api"
+    },
+    {
+      "source": "/docs/infinite-queries",
+      "destination": "/infinite-queries"
+    },
+    {
+      "source": "/docs/init",
+      "destination": "/init"
+    },
+    {
+      "source": "/docs/instaml",
+      "destination": "/instaml"
+    },
+    {
+      "source": "/docs/instaql",
+      "destination": "/instaql"
+    },
+    {
+      "source": "/docs/modeling-data",
+      "destination": "/modeling-data"
+    },
+    {
+      "source": "/docs/next-ssr",
+      "destination": "/next-ssr"
+    },
+    {
+      "source": "/docs/patterns",
+      "destination": "/patterns"
+    },
+    {
+      "source": "/docs/permissions",
+      "destination": "/permissions"
+    },
+    {
+      "source": "/docs/platform-api",
+      "destination": "/platform-api"
+    },
+    {
+      "source": "/docs/presence-and-topics",
+      "destination": "/presence-and-topics"
+    },
+    {
+      "source": "/docs/rate-limits",
+      "destination": "/rate-limits"
+    },
+    {
+      "source": "/docs/self-hosting",
+      "destination": "/self-hosting"
+    },
+    {
+      "source": "/docs/start-python",
+      "destination": "/start-python"
+    },
+    {
+      "source": "/docs/start-rn",
+      "destination": "/start-rn"
+    },
+    {
+      "source": "/docs/start-solidjs",
+      "destination": "/start-solidjs"
+    },
+    {
+      "source": "/docs/start-svelte",
+      "destination": "/start-svelte"
+    },
+    {
+      "source": "/docs/start-tanstack",
+      "destination": "/start-tanstack"
+    },
+    {
+      "source": "/docs/start-vanilla",
+      "destination": "/start-vanilla"
+    },
+    {
+      "source": "/docs/start-vue",
+      "destination": "/start-vue"
+    },
+    {
+      "source": "/docs/storage",
+      "destination": "/storage"
+    },
+    {
+      "source": "/docs/streams",
+      "destination": "/streams"
+    },
+    {
+      "source": "/docs/stripe-payments",
+      "destination": "/stripe-payments"
+    },
+    {
+      "source": "/docs/teams",
+      "destination": "/teams"
+    },
+    {
+      "source": "/docs/users",
+      "destination": "/users"
+    },
+    {
+      "source": "/docs/using-llms",
+      "destination": "/using-llms"
+    },
+    {
+      "source": "/docs/webhooks",
+      "destination": "/webhooks"
+    },
+    {
+      "source": "/docs/workflow",
+      "destination": "/workflow"
+    },
+    {
+      "source": "/docs/auth/clerk",
+      "destination": "/auth/clerk"
+    },
+    {
+      "source": "/docs/auth/firebase",
+      "destination": "/auth/firebase"
+    },
+    {
+      "source": "/docs/auth/guest-auth",
+      "destination": "/auth/guest-auth"
+    },
+    {
+      "source": "/docs/auth/platform-oauth",
+      "destination": "/auth/platform-oauth"
+    },
+    {
+      "source": "/docs/self-hosting/aws",
+      "destination": "/self-hosting/aws"
+    },
+    {
+      "source": "/docs/self-hosting/migrate",
+      "destination": "/self-hosting/migrate"
+    },
+    {
+      "source": "/docs/self-hosting/vps",
+      "destination": "/self-hosting/vps"
+    },
+    {
+      "source": "/docs/auth/apple",
+      "destination": "/auth/apple"
+    },
+    {
+      "source": "/docs/auth/github-oauth",
+      "destination": "/auth/github-oauth"
+    },
+    {
+      "source": "/docs/auth/google-oauth",
+      "destination": "/auth/google-oauth"
+    },
+    {
+      "source": "/docs/auth/linkedin-oauth",
+      "destination": "/auth/linkedin-oauth"
+    },
+    {
+      "source": "/docs/auth/magic-codes",
+      "destination": "/auth/magic-codes"
+    },
+    {
+      "source": "/docs/sdk",
+      "destination": "/sdk"
+    }
+  ]
+}

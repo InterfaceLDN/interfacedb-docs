@@ -1,0 +1,89 @@
+---
+title: Connecting to InterfaceDB
+description: SDKs, hosted endpoints, CLI setup and migration from Instant.
+---
+
+InterfaceDB builds and publishes its own SDK source under `@interface-db/*`. The packages default to `https://api.interfacedb.com` and `wss://api.interfacedb.com/runtime/session`; hosted apps need no URL configuration. Find published packages in the [InterfaceDB npm organisation](https://www.npmjs.com/org/interface-db).
+
+## React
+
+```sh
+npm install @interface-db/react
+```
+
+```ts
+import { init, i, id } from '@interface-db/react';
+
+const schema = i.schema({
+  entities: {
+    notes: i.entity({ title: i.string(), done: i.boolean() }),
+  },
+});
+
+export const db = init({
+  appId: process.env.NEXT_PUBLIC_INTERFACE_APP_ID!,
+  schema,
+});
+
+// In a React component:
+// const { data, isLoading, error } = db.useQuery({ notes: {} });
+// await db.transact(db.tx.notes[id()].update({ title: 'First idea', done: false }));
+```
+
+React Native, Vue, Svelte and Solid use the corresponding `@interface-db/react-native`, `@interface-db/vue`, `@interface-db/svelte` and `@interface-db/solidjs` packages. Next.js helpers are available from `@interface-db/react/nextjs`.
+
+## Server/admin
+
+```sh
+npm install @interface-db/admin
+```
+
+```ts
+import { init, id } from '@interface-db/admin';
+
+const db = init({
+  appId: process.env.INTERFACE_APP_ID!,
+  adminToken: process.env.INTERFACE_ADMIN_TOKEN!,
+});
+
+await db.transact(db.tx.notes[id()].update({ title: 'Server-created note' }));
+const data = await db.query({ notes: {} });
+```
+
+The app ID is public. Keep the admin token in trusted server code. Admin requests bypass app permission rules but share workspace usage limits.
+
+## CLI
+
+```sh
+npx @interface-db/cli login
+npx @interface-db/cli init --app YOUR_APP_ID
+npx @interface-db/cli push --app YOUR_APP_ID
+```
+
+An operator must approve the login email. The installed executable is `interfacedb`. Existing `instant.schema.ts`, `instant.perms.ts`, `instant.config.ts` and `INSTANT_CLI_*` overrides remain supported.
+
+The app generator is `npx @interface-db/create-app`. Copy the command for your existing app from the dashboard; generated JavaScript apps import InterfaceDB packages.
+
+## Local development and self-hosting
+
+Only custom deployments need endpoint overrides:
+
+```ts
+const db = init({
+  appId: 'YOUR_APP_ID',
+  apiURI: 'http://localhost:18888',
+  websocketURI: 'ws://localhost:18888/runtime/session',
+});
+```
+
+The admin SDK needs only `apiURI`. For the CLI:
+
+```sh
+INSTANT_CLI_API_URI=http://localhost:18888 \
+INSTANT_CLI_DASH_URI=http://localhost:3140 \
+npx @interface-db/cli login
+```
+
+## Migrating from Instant packages
+
+Replace SDK dependencies and imports from `@instantdb/*` to `@interface-db/*`. Remove URL overrides when connecting to hosted InterfaceDB; retain custom deployment overrides. Query, transaction, hook and schema APIs are unchanged. Python remains the upstream package and requires an explicit InterfaceDB endpoint.
